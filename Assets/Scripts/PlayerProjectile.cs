@@ -9,9 +9,13 @@ public class PlayerProjectile : MonoBehaviour
 
     [SerializeField]
     private float lifeSpan;
+    private float time;
 
     [SerializeField]
     private float projSpeed;
+
+    public bool fire;
+    private bool fireOnce;
 
     private Vector2 projVelocity = Vector2.zero;
 
@@ -24,7 +28,7 @@ public class PlayerProjectile : MonoBehaviour
 
     public void Shoot(Vector2 dir)
     {
-        projVelocity = dir * projSpeed;
+        rb.velocity = dir * projSpeed;
     }
 
     // Start is called before the first frame update
@@ -36,10 +40,12 @@ public class PlayerProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (projVelocity != Vector2.zero)
+        if (time > lifeSpan)
         {
-            rb.velocity = projVelocity;
+            Destroy(gameObject);
         }
+
+        time += Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
