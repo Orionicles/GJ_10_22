@@ -10,12 +10,18 @@ public class GameManager : MonoBehaviour
     public event Action PlayerDeath;
     public event Action BossDeath;
 
+    [SerializeField]
     [Tooltip("Player Icons")]
-    public Image[] images;
+    private Image[] images;
+
+    [SerializeField]
+    private Slider bossHP;
 
     //Debugging elements (never mind them)
     public bool triggerDamage;
     private bool damagedOnce;
+    public bool triggerBossDmg;
+    private bool bDmgOnce;
 
     private static GameManager instance;
 
@@ -24,6 +30,7 @@ public class GameManager : MonoBehaviour
     private int playerHealth = 5;
     [SerializeField]
     private int bossHealth = 100;
+    private int maxBossHealth;
 
     private bool playerDead;
     private bool bossDead;
@@ -63,6 +70,8 @@ public class GameManager : MonoBehaviour
         {
             bossHealth -= damage;
 
+            bossHP.value = (float)bossHealth / maxBossHealth;
+
             if (bossHealth <= 0)
             {
                 BossDeath();
@@ -78,7 +87,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        maxBossHealth = bossHealth;
     }
 
     // Update is called once per frame
@@ -93,6 +102,17 @@ public class GameManager : MonoBehaviour
         if (!triggerDamage)
         {
             damagedOnce = false;
+        }
+
+        if (triggerBossDmg && !bDmgOnce)
+        {
+            BossTakeDamage(1);
+            bDmgOnce = true;
+        }
+
+        if (!triggerBossDmg)
+        {
+            bDmgOnce = false;
         }
     }
 }
