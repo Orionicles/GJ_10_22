@@ -48,6 +48,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool GetPlayerDead()
+    {
+        return playerDead;
+    }
+
+    public bool GetBossDead()
+    {
+        return bossDead;
+    }
+
     public void PlayerTakeDamage()
     {
         if (!playerDead) 
