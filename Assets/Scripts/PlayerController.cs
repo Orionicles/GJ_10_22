@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpSpeed;
     [Tooltip("Set To Platforms!")]
     [SerializeField] private LayerMask platformLayer;
+    [SerializeField] private Animator animator;
 
     private Vector3 localScale;
 
@@ -21,12 +22,24 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        animator.SetFloat("speed", Mathf.Abs(body.velocity.x));
+
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
         SwitchScale();
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
-            body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+        if (IsGrounded())
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+                animator.SetBool("isJumping", true);
+            }
+            else
+            {
+                animator.SetBool("isJumping", false);
+            }
+        }
     }
 
     private bool IsGrounded()
