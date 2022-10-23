@@ -147,6 +147,7 @@ public class BossController : MonoBehaviour
 
     public void ShowFire()
     {
+        GameManager.Instance.PlayFire();
         foreach (GameObject f in fire)
         {
             f.SetActive(true);
@@ -160,5 +161,26 @@ public class BossController : MonoBehaviour
         {
             f.SetActive(false);
         }
+    }
+
+    //Play Sound Fxs
+    public void PlayScooperSound()
+    {
+        GameManager.Instance.PlayScooping();
+    }
+
+    public void PlaySaw()
+    {
+        GameManager.Instance.PlaySaw();
+    }
+
+    public void PlayKnife()
+    {
+        GameManager.Instance.PlayKnife();
+    }
+
+    public void PlaySquish()
+    {
+        GameManager.Instance.PlayGrab();
     }
 }

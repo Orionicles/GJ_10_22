@@ -6,23 +6,24 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    public AudioSource effectSource, musicSrc;
+
     void Awake()
     {
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
+        //foreach (Sound s in sounds)
+        //{
+        //    s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-            s.source.spatialBlend = s.SpatialBlend;
-            s.source.maxDistance = s.MaxDistance;
-            s.source.rolloffMode = AudioRolloffMode.Custom;
-        }
+        //    s.source.volume = s.volume;
+        //    s.source.pitch = s.pitch;
+        //    s.source.loop = s.loop;
+        //    s.source.spatialBlend = s.SpatialBlend;
+        //    s.source.maxDistance = s.MaxDistance;
+        //    s.source.rolloffMode = AudioRolloffMode.Custom;
+        //}
     }
 
-    //Plays a sound effect using the name of the sound
+    //Plays a sound effect using the name of the sound -- Only use for Music
     //Example: FindObjectOfType<Audio Manager>().Play(“SoundNmae”);
     public void Play(string name)
     {
@@ -32,7 +33,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        s.source.Play();
+        musicSrc.clip = s.clip;
+        musicSrc.Play();
+        //s.source.Play();
     }
 
     public void PlayRandom(string[] randomSounds)
@@ -47,6 +50,10 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    /// <summary>
+    /// Use for sound fxs
+    /// </summary>
+    /// <param name="name"></param>
     public void PlayOneShot(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -56,7 +63,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
         AudioClip clip = s.clip;
-        s.source.PlayOneShot(clip);
+        effectSource.clip = s.clip;
+        effectSource.PlayOneShot(clip);
+
+        //s.source.PlayOneShot(clip);
     }
 
     public void RandomPlayOneShot(string[] randomSounds)
