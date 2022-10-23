@@ -11,7 +11,6 @@ public class BossController : MonoBehaviour
     private Transform[] cols;
 
     [Header("positions")]
-    [SerializeField]
     private Vector3 startPos;
 
 
