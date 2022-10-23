@@ -17,8 +17,6 @@ public class PlayerProjectile : MonoBehaviour
     public bool fire;
     private bool fireOnce;
 
-    private Vector2 projVelocity = Vector2.zero;
-
     private Rigidbody2D rb;
 
     private void Awake()
@@ -29,12 +27,6 @@ public class PlayerProjectile : MonoBehaviour
     public void Shoot(Vector2 dir)
     {
         rb.velocity = dir * projSpeed;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -52,9 +44,16 @@ public class PlayerProjectile : MonoBehaviour
     {
         GameObject other = collision.gameObject;
 
+        if (other.CompareTag("Player"))
+        {
+            return;
+        }
+
         if (other.CompareTag("Boss"))
         {
             GameManager.Instance.BossTakeDamage(damage);
         }
+
+        Destroy(gameObject);
     }
 }
