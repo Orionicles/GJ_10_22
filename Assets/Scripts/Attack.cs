@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "PlayerTest")
+        if (collision.gameObject.CompareTag("Player"))
         {
             manager.PlayerTakeDamage();
             //Debug.Log("here");
