@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (!playerDead) 
         { 
             playerHealth--;
-
+            FindObjectOfType<AudioManager>().Play("Hurt");
             images[playerHealth].enabled = false;
 
             if (playerHealth == 0)
@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Gameplay Theme");
         maxBossHealth = bossHealth;
     }
 
