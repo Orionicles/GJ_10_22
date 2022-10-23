@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         if (!playerDead) 
         { 
             playerHealth--;
-            FindObjectOfType<AudioManager>().Play("Hurt");
+            FindObjectOfType<AudioManager>().PlayOneShot("Hurt");
             images[playerHealth].enabled = false;
 
             if (playerHealth == 0)

@@ -17,13 +17,15 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
 
+        animator = GetComponent<Animator>();
+
         localScale = transform.localScale;
     }
 
     private void Update()
     {
         animator.SetFloat("speed", Mathf.Abs(body.velocity.x));
-        animator.SetFloat("ySpeed", body.velocity.x);
+        animator.SetFloat("ySpeed", body.velocity.y);
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
