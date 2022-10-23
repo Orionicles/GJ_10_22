@@ -26,6 +26,7 @@ public class LevelLoader : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            FindObjectOfType<AudioManager>().Play("UI");
             SceneManager.LoadScene("main menue");
         }
     }

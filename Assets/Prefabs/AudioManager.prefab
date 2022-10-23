@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4874636489091161460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8903607815035487786}
+  - component: {fileID: 1747789454638894974}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: AudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8903607815035487786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874636489091161460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4278358, y: -0.8042812, z: 0.02381295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747789454638894974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874636489091161460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a1035eec62eea46a88ef8bdcde188b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Fire
+    clip: {fileID: 8300000, guid: 49d1824e4b9ab674eb89481c115e34b2, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Grab
+    clip: {fileID: 8300000, guid: 7298db921b78540498210042d6b4b03a, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: ca90f838e4bdeaa4288982f573395e28, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 45cd004d07c33944c82b89985cbf65c0, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Land
+    clip: {fileID: 8300000, guid: 2d9e09e2e0d7b4b4aad5cc4f7a2b0055, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Credits Theme
+    clip: {fileID: 8300000, guid: f70fac4bd2e5361459d044e440bed74f, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Gameplay Theme
+    clip: {fileID: 8300000, guid: ca943f9df616fc74e8cc93fa96fdf7dc, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Main Menu Theme
+    clip: {fileID: 8300000, guid: cf2c4a9dd4e6559449e42b4078bdcbe1, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Knife
+    clip: {fileID: 8300000, guid: 4c775ca5a69202c49a443866cff21325, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 60d0db0f0f6b1e8448da7a42d43a1289, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Spoon
+    clip: {fileID: 8300000, guid: 35a7923693c39e0468af593a530b30df, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: UI
+    clip: {fileID: 8300000, guid: 48410ae1939297b44941465e051d7020, type: 3}
+    volume: 1
+    pitch: 0
+    SpatialBlend: 0
+    MaxDistance: 0
+    loop: 0
+    source: {fileID: 0}

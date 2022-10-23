@@ -24,6 +24,22 @@ public class PlayerCharacter : MonoBehaviour
         // animator.SetTrigger("Celebrate")
     }
 
+    public void PlayerJump()
+    {
+        //animator.SetTrigger("Jump")
+        FindObjectOfType<AudioManager>().Play("Jump");
+    }
+
+    public void PlayerFall()
+    {
+        //animator.SetTrigger("Fall")
+    }
+
+    public void PlayerWalk()
+    {
+        //animator.SetTrigger("Walk")
+    }
+
     // Start is called before the first frame update
     void Start()
     {
