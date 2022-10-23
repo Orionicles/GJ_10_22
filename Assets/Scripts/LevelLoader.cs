@@ -11,8 +11,8 @@ public class LevelLoader : MonoBehaviour
     public GameManager gameManager;
     void Update()
     {
-        playerisalive = gameManager.GetPlayerDead();
-        bossIsAlive = gameManager.GetBossDead();
+        playerisalive = GameManager.Instance.GetPlayerDead();
+        bossIsAlive = GameManager.Instance.GetBossDead();
         
         if (playerisalive == false)
         {

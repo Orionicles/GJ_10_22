@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
     private int bossHealth = 100;
     private int maxBossHealth;
 
+    private float iFrames = 5;
+    private float time;
+    private bool playerTakeDamage;
+
     private bool playerDead;
     private bool bossDead;
 
@@ -54,11 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayerTakeDamage()
     {
-        if (!playerDead) 
+        if (!playerDead && playerTakeDamage) 
         { 
             playerHealth--;
             FindObjectOfType<AudioManager>().PlayOneShot("Hurt");
             images[playerHealth].enabled = false;
+            playerTakeDamage = false;
+            time = 0;
 
             if (playerHealth == 0)
             {
@@ -120,6 +126,16 @@ public class GameManager : MonoBehaviour
         maxBossHealth = bossHealth;
 
         instance = GetComponent<GameManager>();
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+
+        if (time > iFrames)
+        {
+            playerTakeDamage = true;
+        }
     }
 
 }
