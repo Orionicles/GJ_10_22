@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d01245247602149d1b5cc80ff49f0f17
+guid: 4f941eeb94eca104486d89c8501db808
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,91 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: wormidle_0
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 81
-        width: 154
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1d54f63cce2d41b09c96e0379223935
-      internalID: 1990417929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormidle_1
-      rect:
-        serializedVersion: 2
-        x: 375
-        y: 76
-        width: 154
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d45c41a6847dc4bf3880a9b1338c3523
-      internalID: 1094736869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormidle_2
-      rect:
-        serializedVersion: 2
-        x: 660
-        y: 74
-        width: 174
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75dc85a20acd74f49af2d98365aed46e
-      internalID: -446508296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormidle_3
-      rect:
-        serializedVersion: 2
-        x: 970
-        y: 74
-        width: 159
-        height: 115
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3235c0539730d48d3acf2042ee6a4ed8
-      internalID: 462845615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -198,11 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      wormidle_0: 1990417929
-      wormidle_3: 462845615
-      wormidle_1: 1094736869
-      wormidle_2: -446508296
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
