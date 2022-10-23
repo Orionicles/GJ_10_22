@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9881195304052428b843faef4f34c229
+guid: e730c4a0d78df84409572a5da372cfa5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,112 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: wormrun_0
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 76
-        width: 154
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71422cae58e2f47a385bde01acdf29c3
-      internalID: -1469508965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormrun_1
-      rect:
-        serializedVersion: 2
-        x: 371
-        y: 74
-        width: 164
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f27bdec35d13e4942bdfc36830ad0bf3
-      internalID: -207841121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormrun_2
-      rect:
-        serializedVersion: 2
-        x: 660
-        y: 76
-        width: 182
-        height: 129
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a20cd6695ba04ae0aaf68ccd2b740b1
-      internalID: -262075816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormrun_3
-      rect:
-        serializedVersion: 2
-        x: 956
-        y: 76
-        width: 184
-        height: 124
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd5c33ba455904f67878b1fe20bae989
-      internalID: -245936239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wormrun_4
-      rect:
-        serializedVersion: 2
-        x: 1264
-        y: 75
-        width: 171
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5fd8b1a78550407c965ce2b0d1f52c2
-      internalID: -1650312883
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -219,12 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      wormrun_3: -245936239
-      wormrun_2: -262075816
-      wormrun_1: -207841121
-      wormrun_4: -1650312883
-      wormrun_0: -1469508965
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
