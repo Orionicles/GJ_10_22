@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("speed", Mathf.Abs(body.velocity.x));
+        animator.SetFloat("ySpeed", body.velocity.x);
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
 
