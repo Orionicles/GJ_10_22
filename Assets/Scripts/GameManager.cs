@@ -17,12 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Slider bossHP;
 
-    //Debugging elements (never mind them)
-    public bool triggerDamage;
-    private bool damagedOnce;
-    public bool triggerBossDmg;
-    private bool bDmgOnce;
-
     private static GameManager instance;
 
     [Header("Health Components")]
@@ -92,6 +86,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlayScooping()
+    {
+        FindObjectOfType<AudioManager>().PlayOneShot("Spoon");
+    }
+
+    public void PlayKnife()
+    {
+        FindObjectOfType<AudioManager>().PlayOneShot("Knife");
+    }
+
+    public void PlayGrab()
+    {
+        Debug.Log("Sound should play");
+        FindObjectOfType<AudioManager>().PlayOneShot("Grab");
+    }
+
+    public void PlaySaw()
+    {
+        FindObjectOfType<AudioManager>().PlayOneShot("Saw");
+    }
+
+    public void PlayFire()
+    {
+        FindObjectOfType<AudioManager>().PlayOneShot("Fire");
+    }
 
 
     // Start is called before the first frame update
@@ -99,31 +118,8 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Gameplay Theme");
         maxBossHealth = bossHealth;
+
+        instance = GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (triggerDamage && !damagedOnce)
-        {
-            PlayerTakeDamage();
-            damagedOnce = true;
-        }
-
-        if (!triggerDamage)
-        {
-            damagedOnce = false;
-        }
-
-        if (triggerBossDmg && !bDmgOnce)
-        {
-            BossTakeDamage(1);
-            bDmgOnce = true;
-        }
-
-        if (!triggerBossDmg)
-        {
-            bDmgOnce = false;
-        }
-    }
 }
