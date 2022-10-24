@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // public elements
-    public event Action PlayerDeath;
-    public event Action BossDeath;
+    public static event Action PlayerDeath;
+    public static event Action BossDeath;
 
     [SerializeField]
     [Tooltip("Player Icons")]
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     private int bossHealth = 100;
     private int maxBossHealth;
 
-    private float iFrames = 5;
+    private float iFrames = 2;
     private float time;
     private bool playerTakeDamage;
 
@@ -37,11 +38,6 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if (instance == null)
-            {
-                instance = new GameManager();
-            }
-
             return instance;
         }
     }
@@ -104,7 +100,6 @@ public class GameManager : MonoBehaviour
 
     public void PlayGrab()
     {
-        Debug.Log("Sound should play");
         FindObjectOfType<AudioManager>().PlayOneShot("Grab");
     }
 
@@ -120,12 +115,16 @@ public class GameManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        FindObjectOfType<AudioManager>().Play("Gameplay Theme");
         maxBossHealth = bossHealth;
 
-        instance = GetComponent<GameManager>();
+        instance = this;
+    }
+
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Gameplay Theme");
     }
 
     private void Update()

@@ -6,7 +6,7 @@ public class Credits : MonoBehaviour
 {
     private void Start()
     {
-        FindObjectOfType<AudioManager>().Play("Credits");
+        FindObjectOfType<AudioManager>().Play("Credits Theme");
     }
     public void MainMenu ()
     {

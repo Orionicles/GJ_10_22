@@ -28,10 +28,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("ySpeed", body.velocity.y);
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-        Quaternion rot = transform.rotation;
-        rot[2] = 0;
-
-        transform.rotation = rot;
 
         SwitchScale();
 
@@ -41,6 +37,8 @@ public class PlayerController : MonoBehaviour
             {
                 body.velocity = new Vector2(body.velocity.x, jumpSpeed);
                 animator.SetBool("isJumping", true);
+
+                FindObjectOfType<AudioManager>().PlayOneShot("Jump");
             }
             else
             {

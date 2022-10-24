@@ -10,8 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        GameManager.Instance.PlayerDeath += PlayerDead;
-        GameManager.Instance.BossDeath += PlayerCelebrate;
+        GameManager.PlayerDeath += PlayerDead;
+        GameManager.BossDeath += PlayerCelebrate;
     }
 
     public void PlayerDead()

@@ -7,12 +7,10 @@ public class BossIdle : StateMachineBehaviour
     private float timeToIdle = 5f;
     private float time;
 
-    private BossController boss;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss = animator.GetComponent<BossController>();
         time = 0;
     }
 
@@ -21,8 +19,8 @@ public class BossIdle : StateMachineBehaviour
     {
         if (time > timeToIdle)
         {
-            boss.Attack();
             animator.SetTrigger("IdleOver");
+            animator.SetBool("Moving", true);
         }
 
         time += Time.deltaTime;

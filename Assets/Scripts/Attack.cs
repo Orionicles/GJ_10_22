@@ -6,15 +6,29 @@ public class Attack : MonoBehaviour
 {
     private GameManager manager;
 
+    private Animator animator;
+
     public void Awake()
     {
         manager = FindObjectOfType<GameManager>();
+        if (transform.parent != null)
+        {
+            animator = transform.parent.GetComponent<Animator>();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            if (animator != null)
+            {
+                if (animator.GetBool("Moving"))
+                {
+                    return;
+                }
+            }
+
             manager.PlayerTakeDamage();
             //Debug.Log("here");
         }

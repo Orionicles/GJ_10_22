@@ -6,23 +6,36 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
-    public bool playerisalive = true;
-    public bool bossIsAlive = true;
+    public bool playerDead = false;
+    public bool bossDead = false;
     public GameManager gameManager;
+
+    private void Start()
+    {
+        if (gameManager != null)
+        {
+            GameManager.PlayerDeath += StartAgain;
+            GameManager.BossDeath += End;
+        }
+    }
+
     void Update()
     {
-        playerisalive = GameManager.Instance.GetPlayerDead();
-        bossIsAlive = GameManager.Instance.GetBossDead();
+        //if (GameManager.Instance != null)
+        //{
+        //    playerDead = GameManager.Instance.GetPlayerDead();
+        //    bossDead = GameManager.Instance.GetBossDead();
+        //}
         
-        if (playerisalive == false)
-        {
-            StartAgain();
-        }
+        //if (playerDead)
+        //{
+        //    StartAgain();
+        //}
 
-        if (bossIsAlive == false)
-        {
-            SceneManager.LoadScene("end");
-        }
+        //if (bossDead)
+        //{
+        //    SceneManager.LoadScene("end");
+        //}
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -30,13 +43,20 @@ public class LevelLoader : MonoBehaviour
             SceneManager.LoadScene("main menue");
         }
     }
+
+    public void End()
+    {
+        Debug.Log("Ending");
+        StartCoroutine(LoadLevel(2));
+    }
+
     public void StartAgain()
     {
-        SceneManager.LoadScene("Sample Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void LoadNextLevel()
     {
-        LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     IEnumerator LoadLevel(int LevelIndex)
     {

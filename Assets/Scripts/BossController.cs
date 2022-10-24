@@ -46,6 +46,8 @@ public class BossController : MonoBehaviour
 
         if (currentAttack == 3)
             animator.SetBool("Scooper", true);
+
+        animator.SetBool("Moving", false);
     }
 
     public void StartArmAttack()
